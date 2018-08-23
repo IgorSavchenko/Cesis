@@ -38,6 +38,8 @@
 
   &__list {
     margin-top: 25px;
+    display: flex;
+    height: 100%;
     @include tablet-min {
       margin-top: 50px;
     }
@@ -47,13 +49,19 @@
   }
 
   &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    // overflow: hidden;
+    overflow: hidden;
     margin: 12px;
     width: 100%;
 
     &--small {
       @include tablet-min {
+        width: calc(50% - 24px);
+      }
+      @include desktop-min {
         width: calc(25% - 24px);
       }
     }
@@ -72,6 +80,9 @@
 
     &--tall {
       @include tablet-min {
+        width: calc(50% - 24px);
+      }
+      @include desktop-min {
         width: calc(25% - 24px);
       }
     }
@@ -81,43 +92,21 @@
   &__img {
     display: block;
     position: relative;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     background-color: $light-grey;
     // object-fit: cover;
-    &::before {
-      border-top: 4px solid $white;
-      border-bottom: 4px solid $white;
-      transform: scale(0,1);
-    }
-    &::after {
-      border-right: 4px solid $white;
-      border-left: 4px solid $white;
-      transform: scale(1,0);
-    }
-    &::before, &::after {
-      content: '';
-      position: absolute;
-      right: 39px;
-      left: 39px;
-      top: 39px;
-      bottom: 39px;
-      color: $white;
-      outline: none;
-      transition: opacity 0.3s, transform 0.3s;
-    }
+    transition: transform 0.3s, filter 0.3s;
   }
 
   &__link {
     display: block;
+    overflow: hidden;
   }
 
-  &__link:hover &__item {
-    opacity: 0.5s;
-  }
-
-  &__link:hover &__img::before, &__link:hover &__img::after {
-    transform: scale(1);
+  &__link:hover &__img {
+    filter: grayscale(0.75);
+    transform: scale(1.1);
   }
 
   &__description {
@@ -130,10 +119,6 @@
       left: 50px;
       bottom: 50px;
     }
-  }
-
-  &__link:hover &__description {
-    color: $black;
   }
 
   &__info {

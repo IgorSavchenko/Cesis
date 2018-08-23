@@ -38,7 +38,7 @@ $(window).on("load", function() {
       portfolioList.imagesLoaded(function() {
         portfolioList.isotope({
           itemSelector: '.portfolio__item',
-          layoutMode: 'masonryHorizontal',
+          layoutMode: 'masonry',
           stagger: '0.03s',
           transitionDuration: '0.8s',
           masonryHorizontal: {
