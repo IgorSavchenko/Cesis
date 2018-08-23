@@ -1,0 +1,100 @@
+.pricing {
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #22222b;
+  background-image: url("../img/pricetable-min.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  @include tablet-min {
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+  @include desktop-min {
+    margin-top: 150px;
+    padding-top: 148px;
+    padding-bottom: 184px;
+  }
+
+  &__list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet-min {
+      margin-top: 97px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  &__item {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin-bottom: 38px;
+    &::before {
+      position: absolute;
+      width: 148px;
+      height: 148px;
+      left: -10px;
+      bottom: -10px;
+      content: '';
+    }
+
+    &--personal {
+      @include inline-svg($personal-plan-logo);
+    }
+
+    &--business {
+      @include inline-svg($business-plan-logo);
+    }
+
+    &--exclusive {
+      @include inline-svg($exclusive-plan-logo);
+    }
+  }
+
+  &__item:hover &__logo::before {
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__benefits {
+    margin-top: 30px;
+  }
+
+  &__benefit {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__reference {
+    margin-top: 36px;
+    width: 170px;
+	  height: 50px;
+    border-radius: 25px;
+    &:hover {
+      background-color: $purple;
+      opacity: 0.9;
+      border-color: $purple;
+    }
+  }
+
+}

@@ -1,0 +1,270 @@
+.about {
+  position: relative;
+
+  &--intro {
+    padding-top: 50px;
+    padding-bottom:50px;
+    background-image: url("../img/creative-slide-small-3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include tablet-min {
+      padding-top: 100px;
+    }
+    @include tablet-landscape-min {
+      background: none;
+      padding-top: 170px;
+    }
+
+    .container {
+      display: flex;
+      @include tablet-min {
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  &--video {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: linear-gradient(90deg, #fed6e3 0%, #a8edea 100%);
+    // padding-bottom: 50px;
+    // background-image: url("../img/testimonial-1x.jpg");
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    // background-size: cover;
+    @include tablet-min {
+      padding-top: 100px;
+    }
+    @include tablet-landscape-min {
+      background: none;
+      padding-top: 150px;
+      padding-bottom: 0;
+      // margin-bottom: 100px;
+    }
+    @include desktop-fullhd {
+      margin-top: 100px;
+      margin-bottom: 150px;
+    }
+
+    .container {
+      display: flex;
+      @include tablet-min {
+        justify-content: flex-end;
+      }
+    }
+
+  }
+
+  &__content {
+    z-index: 1;
+    @include tablet-min {
+      max-width: 500px;
+    }
+    @include desktop-min {
+      max-width: 550px;
+    }
+  }
+
+  &__banner {
+    position: absolute;
+    display: none;
+    @include tablet-landscape-min {
+      display: block;
+      width: 800px;
+      height: 454px;
+      bottom: 50px;
+    }
+    @include desktop-fullhd {
+      width: 1145px;
+      height: 650px;
+    }
+
+    &--intro {
+      right: 0;
+      top: 130px;
+      background-image: url("../img/creative-slide-small-3.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      @include desktop-min {
+        top: 180px;
+      }
+      @include desktop-fullhd {
+        top: 180px;
+      }
+    }
+
+    &--video {
+      left: 0;
+      top: 100px;
+      background-image: linear-gradient(90deg, #fed6e3 0%, #a8edea 100%);
+      // background-repeat: no-repeat;
+      // background-position: center center;
+      // background-size: cover;
+      @include desktop-min {
+        top: 180px;
+      }
+      @include desktop-fullhd {
+        top: 170px;
+      }
+    }
+
+    &__img {
+      width: 542px;
+      height: 454px;
+      background-image: url("../img/testimonial-1x.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      @include desktop-fullhd {
+        width: 776px;
+        height: 650px;
+      }
+    }
+
+    &__block {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      @include desktop-fullhd {
+        width: 98px;
+        height: 98px;
+      }
+
+      &--large {
+        right: 0;
+        top: 21%;
+        width: 141px;
+        height: 80px;
+        background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%);
+        @include desktop-fullhd {
+          width: 192px;
+          height: 109px;
+        }
+      }
+
+      &--small {
+        right: 141px;
+        top: 38%;
+        width: 70px;
+        height: 40px;
+        background: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%);
+        @include desktop-fullhd {
+          right: 192px;
+          width: 93px;
+          height: 53px;
+        }
+      }
+
+      &--white {
+        background-color: $white;
+        bottom: 0;
+        right: 0;
+        &:last-of-type {
+          right: 78px;
+          bottom: 78px;
+          @include desktop-fullhd {
+            right: 98px;
+            bottom: 98px;
+          }
+        }
+      }
+
+      &--bordered {
+        border: 2px solid $white;
+        width: 56px;
+        height: 56px;
+        right: 98px;
+        bottom: 98px;
+        @include desktop-fullhd {
+          width: 66px;
+          height: 66px;
+          right: 118px;
+          bottom: 118px;
+        }
+      }
+
+      &--purple {
+        background-color: $purple;
+        bottom: 0;
+        right: 0;
+      }
+
+      &--long {
+        width: 94px;
+        height: 2px;
+        right: 48px;
+        bottom: 320px;
+        @include desktop-fullhd {
+          right: 98px;
+          bottom: 462px;
+        }
+      }
+
+      &--short {
+        width: 50px;
+        height: 2px;
+        right: 118px;
+        bottom: 330px;
+        @include desktop-fullhd {
+          right: 170px;
+          bottom: 470px;
+        }
+      }
+
+      &--black {
+        background-color: rgba($black, 0.1);
+        transform: rotate(-45deg);
+      }
+
+      &--video {
+        right: 115px;
+        bottom: 260px;
+        @include desktop-fullhd {
+          right: 172px;
+          bottom: 375px;
+        }
+        &:nth-child(2) {
+          right: 165px;
+          bottom: 240px;
+          @include desktop-fullhd {
+            right: 222px;
+            bottom: 355px;
+          }
+        }
+      }
+
+      &--decor {
+        width: 70px;
+        height: 70px;
+        background-image: url("../img/Elements.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        bottom: 27px;
+        right: 27px;
+        @include desktop-fullhd {
+          width: 89px;
+          height: 89px;
+        }
+      }
+
+    }
+
+  }
+
+  .section__reference {
+    margin-top: 36px;
+    @include tablet-min {
+      margin-left: 0;
+    }
+    &:hover {
+      background-color: $black;
+      color: $white;
+      opacity: 0.9;
+    }
+  }
+
+}

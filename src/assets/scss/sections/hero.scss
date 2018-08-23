@@ -1,0 +1,48 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-color: $dark-grey;
+  background-image: url('../img/creative-header-slide-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow: hidden;
+  @include tablet-min {
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .section__reference {
+    margin-top: 27px;
+    &:hover {
+      background-color: $white;
+      color: $black;
+      opacity: 0.9;
+    }
+  }
+
+  .next {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translate3d(-50%, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s;
+    @include tablet-min {
+      // bottom: 25px;
+    }
+    @include desktop-min {
+      bottom: 50px;
+    }
+    &:hover {
+      transform: translate3d(-50%, 5px, 0);
+    }
+  }
+
+}

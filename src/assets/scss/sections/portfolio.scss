@@ -1,0 +1,164 @@
+.portfolio {
+  padding-top: 50px;
+  @include desktop-min {
+    padding-top: 100px;
+  }
+
+  &__filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include tablet-min {
+      flex-direction: row;
+    }
+
+    &__item {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 2;
+      text-transform: capitalize;
+      letter-spacing: -0.05em;
+      --main-text-color: #818586;
+      @include tablet-landscape-min {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+      }
+    }
+
+    &__link:hover {
+      --main-text-color: #2a2d2e;
+    }
+  }
+
+  &__list {
+    margin-top: 25px;
+    @include tablet-min {
+      margin-top: 50px;
+    }
+    @include desktop-min {
+      margin-top: 100px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    // overflow: hidden;
+    margin: 12px;
+    width: 100%;
+
+    &--small {
+      @include tablet-min {
+        width: calc(25% - 24px);
+      }
+    }
+
+    &--large {
+      @include tablet-min {
+        width: calc(50% - 24px);
+      }
+    }
+
+    &--wide {
+      @include tablet-min {
+        width: calc(50% - 24px);
+      }
+    }
+
+    &--tall {
+      @include tablet-min {
+        width: calc(25% - 24px);
+      }
+    }
+
+  }
+
+  &__img {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    background-color: $light-grey;
+    // object-fit: cover;
+    &::before {
+      border-top: 4px solid $white;
+      border-bottom: 4px solid $white;
+      transform: scale(0,1);
+    }
+    &::after {
+      border-right: 4px solid $white;
+      border-left: 4px solid $white;
+      transform: scale(1,0);
+    }
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      right: 39px;
+      left: 39px;
+      top: 39px;
+      bottom: 39px;
+      color: $white;
+      outline: none;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__link:hover &__item {
+    opacity: 0.5s;
+  }
+
+  &__link:hover &__img::before, &__link:hover &__img::after {
+    transform: scale(1);
+  }
+
+  &__description {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    --main-text-color: #ffffff;
+    z-index: 1;
+    @include tablet-landscape-min {
+      left: 50px;
+      bottom: 50px;
+    }
+  }
+
+  &__link:hover &__description {
+    color: $black;
+  }
+
+  &__info {
+    font-size: 14px;
+    font-weight: 500;
+    @include tablet-landscape-min {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+    @include tablet-landscape-min {
+      font-size: 24px;
+    }
+  }
+
+  .section__reference {
+    margin-top: 38px;
+    &:hover {
+      background-color: $black;
+      color: $white;
+      opacity: 0.9;
+    }
+  }
+
+}

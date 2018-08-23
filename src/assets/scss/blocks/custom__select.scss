@@ -1,0 +1,24 @@
+.custom__select {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background-color: $white;
+  z-index: 1;
+
+  &__field {
+    --main-text-color: #72787a;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    // line-height: 35px;
+    text-transform: capitalize;
+    cursor: pointer;
+    &:hover {
+      --main-text-color: #2a2d2e;
+      font-weight: 500;
+    }
+  }
+
+}

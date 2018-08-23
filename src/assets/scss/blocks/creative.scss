@@ -1,0 +1,32 @@
+.creative {
+
+  &__logo {
+    position: absolute;
+    width: 100px !important;
+    height: 162px !important;
+    left: 60%;
+    bottom: 0;
+    @include inline-svg($creative-logo);
+    @include desktop-fullhd {
+      width: 167px !important;
+      height: 271px !important;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    left: 53.5%;
+    bottom: 52%;
+    color: $white;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    transform: rotate(-90deg);
+    @include desktop-fullhd {
+      font-size: 100px;
+      left: 52.5%;
+      bottom: 60%;
+    }
+  }
+
+}

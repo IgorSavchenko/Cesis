@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    @include inline-svg($header-logo);
+    cursor: pointer;
+  }
+
+}

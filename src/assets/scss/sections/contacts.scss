@@ -1,0 +1,248 @@
+.contacts {
+
+  .container {
+    @include tablet-min {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @include tablet-landscape-min {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+    @include desktop-min {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+    @include desktop-fullhd {
+      padding-left: 224px;
+      padding-right: 224px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    @include tablet-min {
+      padding-top: 100px;
+      padding-bottom: 50px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include desktop-min {
+      padding-top: 134px;
+      padding-bottom: 88px;
+    }
+
+    &--info {
+      justify-content: flex-start;
+      position: relative;
+      padding-top: 25px;
+      padding-bottom: 50px;
+      @include tablet-min {
+        padding-top: 50px;
+        padding-bottom: 100px;
+      }
+      @include desktop-min {
+        padding-top: 100px;
+        padding-bottom: 149px;
+      }
+      &::before {
+        position: absolute;
+        display: block;
+        height: 2px;
+        background-color: rgba($black, 0.1);
+        top: 0;
+        left: 0;
+        right: 0;
+        content: '';
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      &:not(:last-of-type) {
+        @include tablet-min {
+          margin-right: 50px;
+        }
+        @include tablet-landscape-min {
+          margin-right: 100px;
+        }
+      }
+    }
+
+  }
+
+  &__heading {
+    color: $purple;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.110em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-left: 2px solid $purple;
+    @include tablet-min {
+      text-align: left;
+      font-size: 24px;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  .section__title {
+    margin-bottom: 25px;
+    @include tablet-min {
+      max-width: 280px;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+    &--small {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      @include tablet-min {
+        margin-bottom: 30px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .section__subtitle {
+    // margin-bottom: 25px;
+    @include tablet-min {
+      max-width: 390px;
+      // margin-bottom: 44px;
+      text-align: left;
+    }
+  }
+
+  .section__text {
+    margin-top: 25px;
+    --main-text-color: #72787a;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 25px;
+    @include tablet-min {
+      margin-top: 44px;
+      max-width: 455px;
+    }
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @include tablet-min {
+      min-width: 350px;
+      margin-top: -30px;
+    }
+
+    &__field {
+      position: relative;
+      margin-bottom: 30px;
+      height: 70px;
+
+      &--checkbox {
+        height: 26px;
+        display: flex;
+        align-items: center;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-bottom: 1px solid $dark-grey;
+        font-size: 14px;
+        font-weight: 500;
+        text-transform: capitalize;
+        outline: none;
+        &::placeholder {
+          color:  #72787a;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      i {
+        position: absolute;
+        right: 0;
+        bottom: 50%;
+        transform: translate3d(0, 50%, 0);
+        color: #72787a;
+        pointer-events: none;
+      }
+
+      input:focus {
+        border-color: $purple;
+        & + i {
+          color: $purple;
+        }
+      }
+
+      input[type="checkbox"] {
+        display: none;
+
+        & + label {
+          position: relative;
+          padding-left: 46px;
+          font-size: 14px;
+          font-weight: 400;
+          cursor: pointer;
+          --main-text-color: #72787a;
+          &::before, &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            bottom: 50%;
+            transform: translate3d(0, 50%, 0);
+            width: 24px;
+            height: 24px;
+            content: '';
+          }
+          &::before {
+            border: 1px solid $dark-grey;
+          }
+        }
+
+        &:checked + label {
+          font-weight: 500;
+          --main-text-color: #2a2d2e;
+          &::before {
+            border-color: $purple;
+          }
+          &::after {
+            left: 4px;
+            @include inline-svg($checked);
+          }
+        }
+      }
+
+      input[id="activity"] {
+        cursor: pointer;
+      }
+
+    }
+
+  }
+
+  .section__reference {
+    margin-top: 40px;
+    margin-left: 0;
+    &:hover {
+      background-color: $purple;
+      color: $white;
+      border-color: $purple;
+      opacity: 0.9;
+    }
+  }
+
+}

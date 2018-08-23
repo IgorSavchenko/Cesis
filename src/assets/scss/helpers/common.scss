@@ -1,0 +1,57 @@
+//common styles
+* {
+  box-sizing: border-box;
+}
+
+// :root {
+//   --main-text-color: red;
+// }
+
+body {
+  margin: 0 auto;
+  font-family: $poppins;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, li, button, label {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--main-text-color);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1650px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.has-darktext {
+  --main-text-color: #2a2d2e;
+}
+
+.has-lighttext {
+  --main-text-color: #ffffff;
+}
