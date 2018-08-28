@@ -41,14 +41,11 @@ $(window).on("load", function() {
           layoutMode: 'masonry',
           stagger: '0.03s',
           transitionDuration: '0.8s',
-          masonryHorizontal: {
-            rowHeight: 798
+          masonry: {
+            columnWidth: '.grid-sizer',
+            percentPosition: true
+            // horizontalOrder: true
           }
-          // masonry: {
-            // percentPosition: true,
-            // horizontalOrder: true,
-            // columnWidth: 387
-          // }
         });
       });
 
@@ -122,5 +119,16 @@ $(window).on("load", function() {
       });
 
       //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      // scroll reveal effect
+      ScrollReveal().reveal('.hero', { delay: 100 });
+      ScrollReveal().reveal('.header .logo', { delay: 300, distance: '200px', origin: 'top' });
+      ScrollReveal().reveal('.header .burger', { delay: 300, distance: '200px', origin: 'top' });
+      ScrollReveal().reveal('.about' , { delay: 300 });
+      ScrollReveal().reveal('.portfolio', { delay: 300 });
+      ScrollReveal().reveal('.pricing', { delay: 300 });
+      ScrollReveal().reveal('.contacts', { delay: 300 });
+      ScrollReveal().reveal('.social'), { delay: 300 };
+      ScrollReveal().reveal('.footer', { delay: 300 });
 
 });

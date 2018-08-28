@@ -37,9 +37,11 @@
   }
 
   &__list {
+    position: relative;
     margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    height: 100%;
     @include tablet-min {
       margin-top: 50px;
     }
@@ -54,39 +56,28 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    margin: 12px;
-    width: 100%;
-
+    width: 50%;
+    order: 1;
+    @include tablet-min {
+      width: calc(25% - 24px);
+      margin: 12px;
+    }
     &--small {
-      @include tablet-min {
-        width: calc(50% - 24px);
-      }
-      @include desktop-min {
-        width: calc(25% - 24px);
-      }
+      order: 3;
     }
-
-    &--large {
+    &.width-2x {
+      width: 100%;
       @include tablet-min {
         width: calc(50% - 24px);
       }
     }
+  }
 
-    &--wide {
-      @include tablet-min {
-        width: calc(50% - 24px);
-      }
+  .grid-sizer {
+    width: 50%;
+    @include tablet-min {
+      width: 25%;
     }
-
-    &--tall {
-      @include tablet-min {
-        width: calc(50% - 24px);
-      }
-      @include desktop-min {
-        width: calc(25% - 24px);
-      }
-    }
-
   }
 
   &__img {
@@ -95,7 +86,7 @@
     width: 100%;
     height: auto;
     background-color: $light-grey;
-    // object-fit: cover;
+    object-fit: cover;
     transition: transform 0.3s, filter 0.3s;
   }
 
@@ -111,10 +102,14 @@
 
   &__description {
     position: absolute;
-    left: 25px;
-    bottom: 25px;
+    left: 10px;
+    bottom: 10px;
     --main-text-color: #ffffff;
     z-index: 1;
+    @include tablet-min {
+      left: 25px;
+      bottom: 25px;
+    }
     @include tablet-landscape-min {
       left: 50px;
       bottom: 50px;
